@@ -1,0 +1,24 @@
+@use "../index";
+
+.todo {
+  display: flex;
+  align-items: center;
+  padding-right: 4px;
+  @media (min-width: index.$md) {
+    padding: 0 8px;
+  }
+}
+
+.icons__group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todoName {
+  flex-grow: 1;
+  font-size: index.$text-sm;
+  @media (min-width: index.$md) {
+    font-size: index.$text-base;
+  }
+}

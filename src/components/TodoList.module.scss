@@ -1,0 +1,26 @@
+@use "../index";
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Lilita+One&display=swap");
+.todoListContainer {
+  flex-basis: 40%;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 2px solid black;
+  border-radius: 24px;
+}
+.title {
+  text-align: center;
+  margin-top: 8px;
+  font-size: index.$text-base;
+  font-family: "Lilita One";
+  @media (min-width: index.$lg) {
+    font-size: index.$text-md;
+  }
+  @media (min-width: index.$xl) {
+    font-size: index.$text-lg;
+  }
+}
+.todoList {
+  height: 150px;
+  padding: 0 8px;
+  overflow-y: auto;
+}

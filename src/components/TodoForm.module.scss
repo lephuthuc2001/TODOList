@@ -1,0 +1,24 @@
+@use "../index";
+.todoForm {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  @media (min-width: index.$sm) {
+    gap: 8px;
+  }
+  @media (min-width: index.$md) {
+    gap: 16px;
+  }
+  @media (min-width: index.$lg) {
+    gap: 24px;
+  }
+  @media (min-width: index.$xl) {
+    gap: 32px;
+  }
+}
+
+.todoForm input {
+  flex-grow: 1;
+}
