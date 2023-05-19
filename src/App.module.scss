@@ -1,5 +1,5 @@
 @use "index";
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@600&family=Poppins&family=Roboto:ital,wght@1,300&display=swap");
 .app {
   /* regular styles */
   height: 100%;
@@ -41,7 +41,7 @@
 }
 
 .app__title {
-  font-family: "Comfortaa";
+  font-family: "Merriweather Sans";
   font-weight: 900;
   text-align: center;
   font-size: index.$text-md;
@@ -49,7 +49,7 @@
     font-size: index.$text-lg;
   }
   @media (min-width: index.$xl) {
-    font-size: index.$text-xl;
+    font-size: index.$text-2xl;
   }
 }
 

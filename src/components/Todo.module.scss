@@ -17,8 +17,11 @@
 
 .todoName {
   flex-grow: 1;
-  font-size: index.$text-sm;
-  @media (min-width: index.$md) {
+  font-size: small;
+  @media (min-width: index.$sm) {
+    font-size: index.$text-base;
+  }
+  @media (min-width: index.$xl) {
     font-size: index.$text-base;
   }
 }
