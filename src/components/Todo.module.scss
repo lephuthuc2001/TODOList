@@ -3,7 +3,8 @@
 .todo {
   display: flex;
   align-items: center;
-  padding-right: 4px;
+
+  margin: 4px 0;
   @media (min-width: index.$md) {
     padding: 0 8px;
   }
@@ -12,6 +13,7 @@
 .icons__group {
   display: flex;
   justify-content: space-between;
+  gap: 8px;
   align-items: center;
 }
 

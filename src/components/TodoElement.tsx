@@ -1,13 +1,15 @@
 import React from "react";
 import type { Todo } from "../models/Todo";
-import { Checkbox, ConfigProvider } from "antd";
+import { Checkbox } from "antd";
 import type { CheckboxChangeEvent } from "antd/es/checkbox";
 import { Button } from "antd";
 import { DeleteFilled } from "@ant-design/icons";
 import styles from "./Todo.module.scss";
 import useTodoStore from "../stores/TodoStore";
 import { useMediaQuery } from "react-responsive";
-import { Typography } from "antd";
+import { Switch } from "antd";
+import { SwitchChangeEventHandler } from "antd/es/switch";
+import { CheckCircleTwoTone, CloseCircleTwoTone } from "@ant-design/icons";
 type Props = {
   todo: Todo;
 };
@@ -21,27 +23,28 @@ function TodoElement({ todo }: Props) {
   const isLg = useMediaQuery({ query: "(min-width: 992px)" });
   const isXl = useMediaQuery({ query: "(min-width: 1200px)" });
 
-  const onChange = (e: CheckboxChangeEvent) => {
-    console.log(`checked = ${e.target.checked}`);
-    checkDone(todo.id, e.target.checked);
+  const onChange = (checked: boolean) => {
+    console.log(`checked = ${checked}`);
+    checkDone(todo.id, checked);
   };
 
   return (
     <li className={styles.todo}>
       <div className={styles.todoName}>{todo.name}</div>
       <div className={styles.icons__group}>
-        <ConfigProvider
-          componentSize={isLg ? "large" : isMd ? "middle" : "small"}
-        >
-          <Checkbox checked={todo.isDone} onChange={onChange}>
-            Done
-          </Checkbox>
-        </ConfigProvider>
+        <Switch
+          size="default"
+          checked={todo.isDone}
+          checkedChildren="Done"
+          unCheckedChildren="Not Done"
+          onChange={onChange}
+        ></Switch>
         <Button
           onClick={() => {
             removeTodo(todo.id);
           }}
-          size={isLg ? "middle" : "small"}
+          type="primary"
+          size={"small"}
           icon={<DeleteFilled />}
         />
       </div>
