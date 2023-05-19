@@ -10,10 +10,9 @@ import { useMediaQuery } from "react-responsive";
 import styles from "./TodoForm.module.scss";
 function TodoForm() {
   const addTodo = useTodoStore((state) => state.addTodo);
-  const isSm = useMediaQuery({ query: "(min-width: 576px)" });
+
   const isMd = useMediaQuery({ query: "(min-width: 768px)" });
   const isLg = useMediaQuery({ query: "(min-width: 992px)" });
-  const isXl = useMediaQuery({ query: "(min-width: 1200px)" });
 
   type FormValues = {
     todo: string;

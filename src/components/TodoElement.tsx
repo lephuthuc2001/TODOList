@@ -1,15 +1,10 @@
 import React from "react";
 import type { Todo } from "../models/Todo";
-import { Checkbox } from "antd";
-import type { CheckboxChangeEvent } from "antd/es/checkbox";
 import { Button } from "antd";
 import { DeleteFilled } from "@ant-design/icons";
 import styles from "./Todo.module.scss";
 import useTodoStore from "../stores/TodoStore";
-import { useMediaQuery } from "react-responsive";
 import { Switch } from "antd";
-import { SwitchChangeEventHandler } from "antd/es/switch";
-import { CheckCircleTwoTone, CloseCircleTwoTone } from "@ant-design/icons";
 type Props = {
   todo: Todo;
 };
@@ -17,11 +12,6 @@ type Props = {
 function TodoElement({ todo }: Props) {
   const checkDone = useTodoStore((state) => state.checkDone);
   const removeTodo = useTodoStore((state) => state.removeTodo);
-
-  const isSm = useMediaQuery({ query: "(min-width: 576px)" });
-  const isMd = useMediaQuery({ query: "(min-width: 768px)" });
-  const isLg = useMediaQuery({ query: "(min-width: 992px)" });
-  const isXl = useMediaQuery({ query: "(min-width: 1200px)" });
 
   const onChange = (checked: boolean) => {
     console.log(`checked = ${checked}`);
