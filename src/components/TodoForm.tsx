@@ -51,6 +51,7 @@ function TodoForm() {
         size={isLg ? "large" : isMd ? "middle" : "small"}
         htmlType="submit"
         shape="default"
+        type="primary"
       >
         Add
       </Button>
